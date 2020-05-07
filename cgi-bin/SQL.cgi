@@ -26,7 +26,7 @@ SQL Database</span>
  <a class=\"mdl-navigation__link\" href=\"./index.html\">Home</a>                                                                                          
        <a class=\"mdl-navigation__link\" href=\"/cgi-bin/control.cgi\">Control</a>                                                                          
         <a class=\"mdl-navigation__link\" href=\"/cgi-bin/logs.cgi\">Logs</a>                                                                               
-        <a class=\"mdl-navigation__link\" href=\"/cgi-bin/monitoring.cgi\">Monitoring</a>                                                                   
+        <a class=\"mdl-navigation__link\" href=\"./Checklist.html\">Monitoring</a>                                                                   
         <a class=\"mdl-navigation__link\" href=\"/cgi-bin/SQL.cgi\">SQL</a>                                                                                 
         <a class=\"mdl-navigation__link\" href=\"./Cameras.html\">Cameras</a>                                                                                         
       </nav>                                                                                                                                                
@@ -39,7 +39,7 @@ SQL Database</span>
 <a class=\"mdl-navigation__link\" href=\"./index.html\">Home</a>                                                                                           
       <a class=\"mdl-navigation__link\" href=\"/cgi-bin/control.cgi\">Control</a>                                                                           
         <a class=\"mdl-navigation__link\" href=\"/cgi-bin/logs.cgi\">Logs</a>
- <a class=\"mdl-navigation__link\" href=\"/cgi-bin/monitoring.cgi\">Monitoring</a>                                                                   
+ <a class=\"mdl-navigation__link\" href=\"./Checklist.html\">Monitoring</a>                                                                   
         <a class=\"mdl-navigation__link\" href=\"/cgi-bin/SQL.cgi\">SQL</a>                                                                                 
         <a class=\"mdl-navigation__link\" href=\"./Cameras.html\">Cameras</a>                                                                                         
     </nav>                                                                                                                                                  

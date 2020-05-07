@@ -28,11 +28,27 @@ Monitoring</span>
  <a class=\"mdl-navigation__link\" href=\"./index.html\">Home</a>
        <a class=\"mdl-navigation__link\" href=\"/cgi-bin/control.cgi\">Control</a>
         <a class=\"mdl-navigation__link\" href=\"/cgi-bin/logs.cgi\">Logs</a>
-        <a class=\"mdl-navigation__link\" href=\"/cgi-bin/monitoring.cgi\">Monitoring</a>
+        <a class=\"mdl-navigation__link\" href=\"./Checklist.html\">Monitoring</a>
         <a class=\"mdl-navigation__link\" href=\"/cgi-bin/SQL.cgi\">SQL</a>
         <a class=\"mdl-navigation__link\" href=\"./Cameras.html\">Cameras</a>
       </nav>
     </div>
+
+  <div class=\"mdl-layout__tab-bar mdl-js-ripple-effect\">
+      <a class=\"mdl-layout__tab is-active\" href=\"/cgi-bin/monitoring.cgi\"  onclick=\"window.open('/cgi-bin/monitoring.cgi','_self');\">All Plots</a>
+      <a class=\"mdl-layout__tab\" href=\"./Checklist.html\" onclick=\"window.open('./Checklist.html','_self');\">Checklist</a>
+      <a class=\"mdl-layout__tab\" href=\"./MRDSummary.html\" onclick=\"window.open('./MRDSummary.html','_self');\">MRD Summary</a>
+      <a class=\"mdl-layout__tab\" href=\"./TankSummary.html\" onclick=\"window.open('./TankSummary.html','_self');\">Tank Summary</a>
+      <a class=\"mdl-layout__tab\" href=\"./MRDLastFile.html\" onclick=\"window.open('./MRDLastFile.html','_self');\">MRD LastFile</a>
+      <a class=\"mdl-layout__tab\" href=\"./MRDHitmaps.html\" onclick=\"window.open('./MRDHitmaps.html','_self');\">MRD Hitmaps</a>
+      <a class=\"mdl-layout__tab\" href=\"./MRDTimeEvolution.html\" onclick=\"window.open('./MRDTimeEvolution.html','_self');\">MRD TimeEvolution</a>
+      <a class=\"mdl-layout__tab\" href=\"./MRDRates.html\" onclick=\"window.open('./MRDRates.html','_self');\">MRD Rates</a>
+      <a class=\"mdl-layout__tab\" href=\"./TankElectronics.html\" onclick=\"window.open('./TankElectronics.html','_self');\">Tank Electronics</a>
+      <a class=\"mdl-layout__tab\" href=\"./TankTimeEvolution.html\" onclick=\"window.open('./TankTimeEvolution.html','_self');\">Tank TimeEvolution</a>
+      <a class=\"mdl-layout__tab\" href=\"./TankFrequency.html\" onclick=\"window.open('./TankFrequency.html','_self');\">Tank Frequency</a>
+      <a class=\"mdl-layout__tab\" href=\"./TankBuffer.html\" onclick=\"window.open('./TankBuffer.html','_self');\">Tank Buffer</a>
+    </div> 
+
   </header>
   <div class=\"mdl-layout__drawer\">
  <img src=\"../ANNIE-logo.png\"  width=\"90%\" height=\"10%\"> 
@@ -42,7 +58,7 @@ Monitoring</span>
 <a class=\"mdl-navigation__link\" href=\"./index.html\">Home</a>
       <a class=\"mdl-navigation__link\" href=\"/cgi-bin/control.cgi\">Control</a>
         <a class=\"mdl-navigation__link\" href=\"/cgi-bin/logs.cgi\">Logs</a>
-	<a class=\"mdl-navigation__link\" href=\"/cgi-bin/monitoring.cgi\">Monitoring</a>
+	<a class=\"mdl-navigation__link\" href=\"./Checklist.html\">Monitoring</a>
         <a class=\"mdl-navigation__link\" href=\"/cgi-bin/SQL.cgi\">SQL</a>
 	<a class=\"mdl-navigation__link\" href=\"./Cameras.html\">Cameras</a>
     </nav>
@@ -51,8 +67,10 @@ Monitoring</span>
     <div class=\"page-content\">
 <!-- Your content goes here -->
 
-<p> <a href=\"/cgi-bin/monitoring.cgi\">All Plots</a> , <a href=\"MRDSummary.html\">MRD Summary</a> 
-</p>
+<!-- <p> <a href=\"/cgi-bin/monitoring.cgi\">All Plots</a> , <a href=\"./MRDSummary.html\">MRD Summary</a> , <a href=\"./TankSummary.html\"> Tank Summary</a>
+</p> -->
+
+<p>  </p>
 
 <select id=\"mySelect\" onchange=\"myFunction()\">
 

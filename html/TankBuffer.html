@@ -23,7 +23,7 @@ Monitoring</span>
       <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation mdl-layout--large-screen-only">
  <a class="mdl-navigation__link" href="./index.html">Home</a>
-       <a class="mdl-navigation__link" href="/cgi-bin/control.cgi">Control</a>
+       <a class="mdl-navigation__link" href="/cgi-bin/control.cgi" >Control</a>
         <a class="mdl-navigation__link" href="/cgi-bin/logs.cgi">Logs</a>
         <a class="mdl-navigation__link" href="/cgi-bin/monitoring.cgi">Monitoring</a>
         <a class="mdl-navigation__link" href="/cgi-bin/SQL.cgi">SQL</a>
@@ -31,10 +31,10 @@ Monitoring</span>
       </nav>
     </div>
 
-          <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+      <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
       <a href="/cgi-bin/monitoring.cgi" class="mdl-layout__tab" onclick="window.open('/cgi-bin/monitoring.cgi','_self');">All Plots</a>
       <a class="mdl-layout__tab" href="./Checklist.html" onclick="window.open('./Checklist.html','_self');">Checklist</a>
-      <a class="mdl-layout__tab is-active" href="./MRDSummary.html" onclick="window.open('./MRDSummary.html','_self');">MRD Summary</a>
+      <a class="mdl-layout__tab" href="./MRDSummary.html" onclick="window.open('./MRDSummary.html','_self');">MRD Summary</a>
       <a class="mdl-layout__tab" href="./TankSummary.html" onclick="window.open('./TankSummary.html','_self');">Tank Summary</a>
       <a class="mdl-layout__tab" href="./MRDLastFile.html" onclick="window.open('./MRDLastFile.html','_self');">MRD LastFile</a>
       <a class="mdl-layout__tab" href="./MRDHitmaps.html" onclick="window.open('./MRDHitmaps.html','_self');">MRD Hitmaps</a>
@@ -43,7 +43,7 @@ Monitoring</span>
       <a class="mdl-layout__tab" href="./TankElectronics.html" onclick="window.open('./TankElectronics.html','_self');">Tank Electronics</a>
       <a class="mdl-layout__tab" href="./TankTimeEvolution.html" onclick="window.open('./TankTimeEvolution.html','_self');">Tank TimeEvolution</a>
       <a class="mdl-layout__tab" href="./TankFrequency.html" onclick="window.open('./TankFrequency.html','_self');">Tank Frequency</a>
-      <a class="mdl-layout__tab" href="./TankBuffer.html" onclick="window.open('./TankBuffer.html','_self');">Tank Buffer</a>
+      <a class="mdl-layout__tab is-active" href="./TankBuffer.html" onclick="window.open('./TankBuffer.html','_self');">Tank Buffer</a>
   </div>
 
   </header>
@@ -60,32 +60,55 @@ Monitoring</span>
 	<a class="mdl-navigation__link" href="./Cameras.html">Cameras</a>
     </nav>
   </div>
+
+
+
   <main class="mdl-layout__content">
+
     <div class="page-content">
 
 <!-- Your content goes here -->
 <!-- <p> <a href="/cgi-bin/monitoring.cgi">All Plots</a> , <a href="./MRDSummary.html">MRD Summary</a> , <a href="./MRDLastFile.html"> MRD LastFile</a> , <a href="./MRDHitmaps.html"> MRD Hitmaps</a> , <a href="./MRDTimeEvolution.html"> MRD TimeEvolution</a> , <a href="./MRDRates.html"> MRD Rates</a> , <a href="./TankSummary.html"> Tank Summary</a> , <a href="./TankElectronics.html"> Tank Electronics</a> , <a href="./TankTimeEvolution.html"> Tank TimeEvolution</a> , <a href="./TankFrequency.html"> Tank Frequency</a> , <a href="./TankBuffer.html"> Tank Buffer</a>
-</p>-->
+</p> -->
 
 <p>  </p>
 
-<img src="./monitoringplots/MRD_FileHistory_current_24h.png"  width="35%" height="40%">
-<img src="./monitoringplots/MRD_FileHistory_current_2h.png"  width="35%" height="40%">
-<img src="./monitoringplots/MRD_FileTimeStamp_current_24h.png"  width="20%" height="20%">
-<p>  </p>
-<img src="./monitoringplots/MRDTriggertypes_timeevolution_lastDay.png"  width="45%" height="40%">
-<img src="./monitoringplots/MRDHitmap_lastDay.png"  width="45%" height="40%"> 
-<p>  </p>
-<img src="./monitoringplots/MRDTDCHist_Cluster_lastFile.png"  width="45%" height="40%">
-<img src="./monitoringplots/MRDHitmap_lastFile.png"  width="45%" height="40%">
-<p>  </p>
-<img src="./monitoringplots/MRDRates_Detector_lastFile.png"  width="45%" height="
-40%">
-<img src="./monitoringplots/MRDRates_DetectorFACC_lastFile.png"  width="45%" height="40%">   
-<p>  </p>
-<div style="width:25%; overflow: hidden; float: left;"> &ensp;</div>
-<img src="./monitoringplots/MRDRates_Electronics_lastFile.png"  width="45%" height="40%">    
-                                                     
+<img src="./monitoringplots/PMT_Temp_RWM.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_BRF.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr1_Sl4.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr1_Sl5.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr1_Sl6.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr1_Sl7.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr1_Sl10.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr1_Sl11.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr1_Sl12.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr1_Sl13.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr1_Sl14.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr2_Sl3.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr2_Sl4.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr2_Sl5.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr2_Sl6.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr2_Sl9.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr2_Sl10.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr2_Sl11.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr2_Sl13.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr2_Sl14.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr2_Sl15.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr2_Sl18.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr2_Sl19.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr3_Sl3.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr3_Sl4.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr3_Sl5.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr3_Sl6.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr3_Sl9.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr3_Sl10.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr3_Sl11.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr3_Sl12.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr3_Sl13.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr3_Sl14.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr3_Sl15.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr3_Sl18.jpg"  width="45%" height="40%">
+<img src="./monitoringplots/PMT_Temp_Cr3_Sl19.jpg"  width="45%" height="40%">
 
 
 </div>
