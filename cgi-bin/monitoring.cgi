@@ -39,6 +39,7 @@ Monitoring</span>
       <a class=\"mdl-layout__tab\" href=\"./Checklist.html\" onclick=\"window.open('./Checklist.html','_self');\">Checklist</a>
       <a class=\"mdl-layout__tab\" href=\"./MRDSummary.html\" onclick=\"window.open('./MRDSummary.html','_self');\">MRD Summary</a>
       <a class=\"mdl-layout__tab\" href=\"./TankSummary.html\" onclick=\"window.open('./TankSummary.html','_self');\">Tank Summary</a>
+      <a class=\"mdl-layout__tab\" href=\"./TriggerSummary.html\" onclick=\"window.open('./TriggerSummary.html','_self');\">Trigger Summary</a>
       <a class=\"mdl-layout__tab\" href=\"./MRDLastFile.html\" onclick=\"window.open('./MRDLastFile.html','_self');\">MRD LastFile</a>
       <a class=\"mdl-layout__tab\" href=\"./MRDHitmaps.html\" onclick=\"window.open('./MRDHitmaps.html','_self');\">MRD Hitmaps</a>
       <a class=\"mdl-layout__tab\" href=\"./MRDTimeEvolution.html\" onclick=\"window.open('./MRDTimeEvolution.html','_self');\">MRD TimeEvolution</a>
@@ -47,6 +48,8 @@ Monitoring</span>
       <a class=\"mdl-layout__tab\" href=\"./TankTimeEvolution.html\" onclick=\"window.open('./TankTimeEvolution.html','_self');\">Tank TimeEvolution</a>
       <a class=\"mdl-layout__tab\" href=\"./TankFrequency.html\" onclick=\"window.open('./TankFrequency.html','_self');\">Tank Frequency</a>
       <a class=\"mdl-layout__tab\" href=\"./TankBuffer.html\" onclick=\"window.open('./TankBuffer.html','_self');\">Tank Buffer</a>
+      <a class=\"mdl-layout__tab\" href=\"./TriggerRates.html\" onclick=\"window.open('./TriggerRates.html','_self');\">Trigger Rates</a>
+      <a class=\"mdl-layout__tab\" href=\"./TriggerAlignment.html\" onclick=\"window.open('./TriggerAlignment.html','_self');\">Trigger Alignment</a>
     </div> 
 
   </header>
