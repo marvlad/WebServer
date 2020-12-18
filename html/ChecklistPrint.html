@@ -1,0 +1,98 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> <title>Monitoring</title>
+<meta http-equiv="refresh" content="180"> <!-- Refresh every 3mins -->
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+
+</head>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<script defer src="https://code.getmdl.io/1.1.2/material.min.js"></script>
+ <link rel="stylesheet" href="https://code.getmdl.io/1.1.2/material.indigo-deep_purple.min.css" />
+<meta name="viewport" content="width=device-width, initial-scale=0.99">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <link rel="stylesheet" href="styles.css"> 
+  <body>
+
+
+<div style="width:2%; overflow: inline; float: left;"> &ensp;</div>
+<p> <a href="./Checklist.html">Web version</a> </p>
+
+<div style="width:2%; overflow: inline; float: left;"> &ensp;</div>
+<p>Date/Time: <span id="datetime"></span></p>
+
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = dt.toLocaleString();
+</script>
+
+<p>  </p>
+
+<img src="./monitoringplots/DAQInfo_current.png" width=35% height="15%">
+<img src="./monitoringplots/DAQ_VMEServices_current_24h.png"  width="25%" height="15%">
+<img src="./monitoringplots/DAQFileSize_lastDay.png"  width="37%" height="15%">
+<p> </p>
+<hr>
+<div style="width:3%; overflow: inline; float: left;"> &ensp;</div>
+<div style="width:20%; overflow: inline; float: left;"> <b>1)</b> Are MRD files periodically updating? </div>
+<img src="./monitoringplots/MRD_FileHistory_current_2h.png"  width="35%" height="15%">
+<img src="./monitoringplots/MRD_FileHistory_current_2h_Reference.png"  width="35%" height="15%">
+<p> </p>
+<div class="leftspace" style="width:3%; overflow: inline; float: left;"> &ensp;</div>
+<div class="question" style="width:20%; overflow: inline; float: left;"> <b>2)</b> Are PMT files periodically updating? </div>
+<img src="./monitoringplots/PMT_FileHistory_current_2h.png"  width="35%" height="15%">
+<img src="./monitoringplots/PMT_FileHistory_current_2h_Reference.png"  width="35%" height="15%">
+<p> </p>
+<div style="width:3%; overflow: inline; float: left;"> &ensp;</div>
+<div style="width:20%; overflow: inline; float: left;"> <b>3)</b> Are all 3 features (background/beam/cosmic) visible in MRD data? </div>
+<img src="./monitoringplots/MRDTDCHist_Cluster_last20Files.png"  width="35%" height="15%">
+<img src="./monitoringplots/MRDTDCHist_Cluster_lastFile_Reference.png"  width="35%" height="15%">
+<p> </p>
+<div style="width:3%; overflow: inline; float: left;"> &ensp;</div>
+<div style="width:20%; overflow: inline; float: left;"> <b>4)</b> Are the MRD trigger rates in the expected range? (Beam: 4-5Hz, Cosmic: 0.2-0.3Hz) </div>
+<img src="./monitoringplots/MRDTriggertypes_timeevolution_lastDay.png"  width="35%" height="15%">
+<img src="./monitoringplots/MRDTriggertypes_timeevolution_lastDay_Reference.png"  width="35%" height="15%">
+<p> </p>
+<div style="width:3%; overflow: hidden; float: left;"> &ensp;</div>
+<div style="width:20%; overflow: hidden; float: left;"> <b>5)</b> Did all MRD TDC slots register hits in the last file? </div>
+<img src="./monitoringplots/MRDHitmap_lastFile.png"  width="35%" height="15%">
+<img src="./monitoringplots/MRDHitmap_lastFile_Reference.png"  width="35%" height="15%">
+<p> </p>
+<div style="width:3%; overflow: hidden; float: left;"> &ensp;</div>
+<div style="width:20%; overflow: hidden; float: left;"> <b>6)</b> Do all active MRD channels have a rate larger than 0?</div>
+<img src="./monitoringplots/MRDRates_Electronics_lastFile.png"  width="35%" height="15%">
+<img src="./monitoringplots/MRDRates_Electronics_lastFile_Reference.png"  width="35%" height="15%">
+<p> </p>
+<div style="width:3%; overflow: hidden; float: left;"> &ensp;</div>
+<div style="width:20%; overflow: hidden; float: left;"> <b>7)</b> Are the Pedestal values in the expected range of 300-350?</div>
+<img src="./monitoringplots/PMT_Ped_Electronics_lastFile.jpg"  width="35%" height="15%">
+<img src="./monitoringplots/PMT_Ped_Electronics_lastFile_Reference.jpg"  width="35%" height="15%">
+<p> </p>
+<div style="width:3%; overflow: hidden; float: left;"> &ensp;</div>
+<div style="width:20%; overflow: hidden; float: left;"> <b>8a)</b> Do all active PMTs have a rate larger than 0?</div>
+<img src="./monitoringplots/PMT_Rate_Electronics_lastFile.jpg"  width="35%" height="15%">
+<img src="./monitoringplots/PMT_Rate_Electronics_lastFile_Reference.jpg"  width="35%" height="15%">
+<p> </p>
+<div style="width:3%; overflow: hidden; float: left;"> &ensp;</div>
+<div style="width:20%; overflow: hidden; float: left;"> <b>8b)</b> Do all active PMTs have a rate larger than 0? (alternative view) </div>
+<img src="./monitoringplots/PMTHitmap_lastFile.png"  width="35%" height="15%">
+<img src="./monitoringplots/PMTHitmap_lastFile_Reference.png"  width="35%" height="15%">
+<p> </p>
+<div style="width:3%; overflow: hidden; float: left;"> &ensp;</div>
+<div style="width:20%; overflow: hidden; float: left;"> <b>9)</b> Are the trigger rates roughly in the right order of magnitude?</div>
+<img src="./monitoringplots/Trigger_Rate_selected_lastFile.png"  width="35%" height="15%">
+<img src="./monitoringplots/Trigger_Rate_selected_lastFile_Reference.png"  width="35%" height="15%">
+<p> </p>
+<div style="width:3%; overflow: hidden; float: left;"> &ensp;</div>
+<div style="width:20%; overflow: hidden; float: left;"> <b>10)</b> Does the BRF buffer look like the reference?</div>
+<img src="./monitoringplots/PMT_Temp_BRF.jpg"  width="35%" height="15%">
+<img src="./monitoringplots/PMT_Temp_BRF_Reference.jpg"  width="35%" height="15%">
+<p> </p>
+<div style="width:3%; overflow: hidden; float: left;"> &ensp;</div>
+<div style="width:20%; overflow: hidden; float: left;"> <b>11)</b> Does the RWM buffer look like the reference?</div>
+<img src="./monitoringplots/PMT_Temp_RWM.jpg"  width="35%" height="15%">
+<img src="./monitoringplots/PMT_Temp_RWM_Reference.jpg"  width="35%" height="15%">
+
+</body>
+                                                                                                                             

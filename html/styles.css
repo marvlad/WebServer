@@ -549,3 +549,9 @@ a img{
     display: none;
   }
 }
+
+@media print {
+    .container {
+        display: inline;
+    }
+}
