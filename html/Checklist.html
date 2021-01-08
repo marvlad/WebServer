@@ -4,6 +4,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
 <meta http-equiv="Pragma" content="no-cache"/>
 <meta http-equiv="Expires" content="0"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
 </head>
@@ -90,6 +91,16 @@ Monitoring</span>
 <img src="./monitoringplots/DAQCPU_lastDay.png"  width="33%" height="40%">
 <p> </p>
 <hr>
+<p> <b> VME 01 </b> </p>
+<div id="content1"></div>
+<hr>
+<p> <b> VME 02 </b> </p>
+<div id="content2"></div>
+<hr>
+<p> <b> VME 03 </b> </p>
+<div id="content3"></div>
+<p></p>
+<hr>
 <div style="width:3%; overflow: hidden; float: left;"> &ensp;</div>
 <div style="width:20%; overflow: hidden; float: left;"> <b>1)</b> Are MRD files periodically updating? </div>
 <img src="./monitoringplots/MRD_FileHistory_current_2h.png"  width="35%" height="40%">
@@ -155,6 +166,23 @@ Monitoring</span>
 </div>
   </main>
 </div>
+
+<script>
+
+function showcompstats() {
+
+  $(document).ready(function(){
+   
+   $('#content1').load("./DAQ/compstatsVME01");
+   $('#content2').load("./DAQ/compstatsVME02");
+   $('#content3').load("./DAQ/compstatsVME03");
+});
+
+}
+
+setInterval(showcompstats, 3000);
+
+</script>
 
 </body>
                                                                                                                              
