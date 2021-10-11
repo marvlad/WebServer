@@ -1,0 +1,195 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> <title>Monitoring</title>
+
+ </head>
+
+ <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+ <script defer src="https://code.getmdl.io/1.1.2/material.min.js"></script>
+  <link rel="stylesheet" href="https://code.getmdl.io/1.1.2/material.indigo-deep_purple.min.css" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+ <meta http-equiv="Pragma" content="no-cache"/>
+ <meta http-equiv="Expires" content="0"/>
+   <link rel="stylesheet" href="styles.css"> 
+ <body>
+
+ <!-- Always shows a header, even in smaller screens. -->
+ <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+   <header class="mdl-layout__header">
+     <div class="mdl-layout__header-row">
+       <!-- Title -->
+       <span class="mdl-layout-title">
+ Monitoring</span>
+       <!-- Add spacer, to align navigation to the right -->
+       <div class="mdl-layout-spacer"></div>
+       <!-- Navigation. We hide it in small screens. -->
+       <nav class="mdl-navigation mdl-layout--large-screen-only">
+  <a class="mdl-navigation__link" href="./index.html">Home</a>
+        <a class="mdl-navigation__link" href="/cgi-bin/control.cgi" >Control</a>
+         <a class="mdl-navigation__link" href="/cgi-bin/logs.cgi">Logs</a>
+         <a class="mdl-navigation__link" href="/cgi-bin/monitoring.cgi">Monitoring</a>
+         <a class="mdl-navigation__link" href="/cgi-bin/SQL.cgi">SQL</a>
+         <a class="mdl-navigation__link" href="./Cameras.html">Cameras</a>
+       </nav>
+     </div>
+
+       <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+       <a href="/cgi-bin/monitoring.cgi" class="mdl-layout__tab" onclick="window.open('/cgi-bin/monitoring.cgi','_self');">All Plots</a>
+       <a class="mdl-layout__tab" href="./Checklist.html" onclick="window.open('./Checklist.html','_self');">Checklist</a>
+       <a class="mdl-layout__tab" href="./MRDSummary.html" onclick="window.open('./MRDSummary.html','_self');">MRD Summary</a>
+       <a class="mdl-layout__tab" href="./TankSummary.html" onclick="window.open('./TankSummary.html','_self');">Tank Summary</a>
+       <a class="mdl-layout__tab" href="./TriggerSummary.html" onclick="window.open('./TriggerSummary.html','_self');">Trigger Summary</a>
+       <a class="mdl-layout__tab" href="./LAPPDSummary.html" onclick="window.open('./LAPPDSummary.html','_self');">LAPPD Summary</a>
+       <a class="mdl-layout__tab" href="./MRDLastFile.html" onclick="window.open('./MRDLastFile.html','_self');">MRD LastFile</a>
+       <a class="mdl-layout__tab" href="./MRDHitmaps.html" onclick="window.open('./MRDHitmaps.html','_self');">MRD Hitmaps</a>
+       <a class="mdl-layout__tab" href="./MRDTimeEvolution.html" onclick="window.open('./MRDTimeEvolution.html','_self');">MRD TimeEvolution</a>
+       <a class="mdl-layout__tab" href="./MRDRates.html" onclick="window.open('./MRDRates.html','_self');">MRD Rates</a>
+       <a class="mdl-layout__tab" href="./TankElectronics.html" onclick="window.open('./TankElectronics.html','_self');">Tank Electronics</a>
+       <a class="mdl-layout__tab" href="./TankTimeEvolution.html" onclick="window.open('./TankTimeEvolution.html','_self');">Tank TimeEvolution</a>
+       <a class="mdl-layout__tab" href="./TankFrequency.html" onclick="window.open('./TankFrequency.html','_self');">Tank Frequency</a>
+       <a class="mdl-layout__tab" href="./TankBuffer.html" onclick="window.open('./TankBuffer.html','_self');">Tank Buffer</a>
+       <a class="mdl-layout__tab" href="./TriggerRates.html" onclick="window.open('./TriggerRates.html','_self');">Trigger Rates</a>
+       <a class="mdl-layout__tab" href="./TriggerAlignment.html" onclick="window.open('./TriggerAlignment.html','_self');">Trigger Alignment</a>
+       <a class="mdl-layout__tab" href="./LAPPDSlowControl.html" onclick="window.open('./LAPPDSlowControl.html','_self');">LAPPD Slow Control</a>
+       <a class="mdl-layout__tab" href="./LAPPDFreq.html" onclick="window.open('./LAPPDFreq.html','_self');">LAPPD Freq</a>
+       <a class="mdl-layout__tab is-active" href="./LAPPDBuffer.html" onclick="window.open('./LAPPDBuffer.html','_self');">LAPPD Buffer</a>
+       <a class="mdl-layout__tab" href="./LAPPDLive.html" onclick="window.open('./LAPPDLive.html','_self');">LAPPD Live</a>
+
+   </div>
+
+   </header>
+   <div class="mdl-layout__drawer">
+  <img src="../ANNIE-logo.png"  width="90%" height="10%"> 
+     <span class="mdl-layout-title"></span>
+ <div class="android-drawer-separator"></div>
+     <nav class="mdl-navigation">
+ <a class="mdl-navigation__link" href="./index.html">Home</a>
+       <a class="mdl-navigation__link" href="/cgi-bin/control.cgi">Control</a>
+         <a class="mdl-navigation__link" href="/cgi-bin/logs.cgi">Logs</a>
+ 	<a class="mdl-navigation__link" href="/cgi-bin/monitoring.cgi">Monitoring</a>
+         <a class="mdl-navigation__link" href="/cgi-bin/SQL.cgi">SQL</a>
+ 	<a class="mdl-navigation__link" href="./Cameras.html">Cameras</a>
+     </nav>
+   </div>
+
+
+
+   <main class="mdl-layout__content">
+
+     <div class="page-content">
+
+ <!-- Your content goes here -->
+ <!-- <p> <a href="/cgi-bin/monitoring.cgi">All Plots</a> , <a href="./MRDSummary.html">MRD Summary</a> , <a href="./MRDLastFile.html"> MRD LastFile</a> , <a href="./MRDHitmaps.html"> MRD Hitmaps</a> , <a href="./MRDTimeEvolution.html"> MRD TimeEvolution</a> , <a href="./MRDRates.html"> MRD Rates</a> , <a href="./TankSummary.html"> Tank Summary</a> , <a href="./TankElectronics.html"> Tank Electronics</a> , <a href="./TankTimeEvolution.html"> Tank TimeEvolution</a> , <a href="./TankFrequency.html"> Tank Frequency</a> , <a href="./TankBuffer.html"> Tank Buffer</a>
+ </p> -->
+
+ <p>  </p>
+
+ <img src="./monitoringplots/LAPPDWaveform_Voltages_Board1_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_Voltages_Board2_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_Voltages_Board-1_current.png"  width="33%" height="40%">
+ <p> </p>
+ <hr>
+
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board1channel0_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board1channel1_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board1channel2_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board1channel3_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board1channel4_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board1channel5_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board1channel6_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board1channel7_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board1channel8_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board1channel9_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board1channel10_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board1channel11_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board1channel12_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board1channel13_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board1channel14_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board1channel15_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board1channel16_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board1channel17_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board1channel18_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board1channel19_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board1channel20_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board1channel21_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board1channel22_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board1channel23_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board1channel24_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board1channel25_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board1channel26_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board1channel27_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board1channel28_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board1channel29_current.png"  width="33%" height="40%">
+ <hr>
+
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board2channel0_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board2channel1_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board2channel2_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board2channel3_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board2channel4_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board2channel5_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board2channel6_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board2channel7_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board2channel8_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board2channel9_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board2channel10_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board2channel11_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board2channel12_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board2channel13_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board2channel14_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board2channel15_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board2channel16_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board2channel17_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board2channel18_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board2channel19_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board2channel20_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board2channel21_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board2channel22_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board2channel23_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board2channel24_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board2channel25_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board2channel26_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board2channel27_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board2channel28_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board2channel29_current.png"  width="33%" height="40%">
+ <hr>
+
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board-1channel0_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board-1channel1_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board-1channel2_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board-1channel3_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board-1channel4_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board-1channel5_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board-1channel6_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board-1channel7_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board-1channel8_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board-1channel9_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board-1channel10_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board-1channel11_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board-1channel12_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board-1channel13_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board-1channel14_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board-1channel15_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board-1channel16_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board-1channel17_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board-1channel18_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board-1channel19_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board-1channel20_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board-1channel21_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board-1channel22_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board-1channel23_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board-1channel24_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board-1channel25_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board-1channel26_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board-1channel27_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board-1channel28_current.png"  width="33%" height="40%">
+ <img src="./monitoringplots/LAPPDWaveform_waveform_onedim_Board-1channel29_current.png"  width="33%" height="40%">
+ <hr>
+
+
+
+ </div>
+   </main>
+ </div>
+
+ </body>
