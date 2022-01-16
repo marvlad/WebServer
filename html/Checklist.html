@@ -206,8 +206,8 @@ setInterval(showcompstats, 3000);
      .then ((data) => {
        var num = parseInt(data);
        var num_services_text = num;
-       if (num == 18) num_services_text = "<p style=\"color:green; font-size: 30px;\" > DAQ Services: "+num+"/18 (All good) </p>";
-       else num_services_text = "<p  style=\"color:red; font-size: 30px;\"> DAQ Services: "+num+"/18 (Something wrong) </p>";
+       if (num == 20) num_services_text = "<p style=\"color:green; font-size: 30px;\" > DAQ Services: "+num+"/20 (All good) </p>";
+       else num_services_text = "<p  style=\"color:red; font-size: 30px;\"> DAQ Services: "+num+"/20 (Something wrong) </p>";
 
        document.getElementById("NumServices").innerHTML = num_services_text;
 
