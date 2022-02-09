@@ -108,23 +108,31 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
    myHeaders.append('pragma', 'no-cache');
    myHeaders.append('cache-control', 'no-cache');
 
+   var num_date;
+   var date_file;
+   fetch('./monitoringplots/date_num_services.txt')
+     .then(response => response.text())
+     .then ((data) => {
+       num_date = parseInt(data);
+   });
+
    var myInit = {
      method: 'GET',
      headers: myHeaders,
    };
-   fetch('./num_services.txt',myInit)
+   fetch('./monitoringplots/num_services.txt',myInit)
      .then(response => response.text())
      .then ((data) => {
        var num = parseInt(data);
        var num_services_text = num;
-       if (num == 20) num_services_text = "<p style=\"color:green; font-size: 30px;\" > DAQ Services: "+num+"/20 (All good) </p>";
-       else num_services_text = "<p  style=\"color:red; font-size: 30px;\"> DAQ Services: "+num+"/20 (Something wrong) </p>";
+       if (num == 20) num_services_text = "<p style=\"color:green; font-size: 30px;\" > DAQ Services: "+num+"/20 (All good) [Last updated: "+ new Date(num_date*1000).toLocaleString()+ " ] </p>";
+       else num_services_text = "<p  style=\"color:red; font-size: 30px;\"> DAQ Services: "+num+"/20 (Something wrong) [Last updated: "+ new Date(num_date*1000).toLocaleString()+ " ] </p>";
 
        document.getElementById("NumServices").innerHTML = num_services_text;
 
      });
  }
- setInterval(getNumServices, 1000); //run function getNumServices() every 60 seconds (/every minute)
+ setInterval(getNumServices, 20000); //run function getNumServices() every 20 seconds (/every minute)
  </script>
 
 

@@ -24,6 +24,7 @@
 #include <boost/uuid/uuid_generators.hpp> // generators
 #include <boost/uuid/uuid_io.hpp>         // streaming operators etc.
 #include <boost/date_time/posix_time/posix_time.hpp>
+#include <boost/filesystem.hpp>
 
 using namespace std;
 //using namespace cgicc;
@@ -180,7 +181,7 @@ std::vector<Store*> RemoteServices;
   cout<<"<th scope='col'><div align='center'>Service Name</div></th>"; 
   cout<<"<th scope='col'><div align'center'>Service Status</div></th> </tr>";
 
-  //cout<<"remote services size "<<RemoteServices.size();
+//  cout<<"remote services size "<<RemoteServices.size();
   
   for(int i=0;i<RemoteServices.size();i++){
 
@@ -215,11 +216,25 @@ std::vector<Store*> RemoteServices;
     //std::cout<<"["<<i<<"]  "<<ip<<" , "<<service<<" , "<<status<<std::endl;
     
   }
-  
-  std::ofstream nservices("/web/num_services.txt",std::ofstream::out | std::ofstream::trunc);
+ 
+  /*std::ifstream in_services("/web/monitoringplots/num_services.txt");
+  int test_services;
+  in_services >> test_services;
+  cout << "in_services in /web/monitoringplots/num_services.txt: "<<test_services<<endl;
+  in_services.close();*/
+ 
+  std::ofstream nservices;
+  nservices.open("/web/monitoringplots/num_services.txt");
+  //std::cout <<"file open for writing: "<<nservices.is_open()<<endl;
   nservices << RemoteServices.size() << endl;
   nservices.close();
-  
+ 
+  std::string path_nservices = "/web/monitoringplots/num_services.txt";
+  std::time_t date_nservices = boost::filesystem::last_write_time(path_nservices.c_str());
+  std::ofstream file_date_nservices("/web/monitoringplots/date_num_services.txt");
+  file_date_nservices << date_nservices << endl;
+  file_date_nservices.close();
+
   cout<<"</table> <p>";
   
 
