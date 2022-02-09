@@ -3,7 +3,7 @@
 #include <string>  
 #include <stdio.h>  
 #include <stdlib.h> 
-
+#include <fstream>
 
 /*
 #include <cgicc/CgiDefs.h> 
@@ -216,7 +216,9 @@ std::vector<Store*> RemoteServices;
     
   }
   
-  
+  std::ofstream nservices("/web/num_services.txt",std::ofstream::out | std::ofstream::trunc);
+  nservices << RemoteServices.size() << endl;
+  nservices.close();
   
   cout<<"</table> <p>";
   
