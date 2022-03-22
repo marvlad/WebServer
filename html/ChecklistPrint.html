@@ -42,6 +42,15 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 <img src="./monitoringplots/DAQCPU_lastDay.png"  width="33%" height="15%">
 <p> </p>
 <hr>
+<img src="./monitoringplots/LAPPDSC_TempHumInfo_current.png" width=29% height="15%">
+<img src="./monitoringplots/LAPPDSC_TimeEvolution_Humidity_lastDay.png"  width="33%" height="15%">
+<img src="./monitoringplots/LAPPDSC_TimeEvolution_Temperature_lastDay.png"  width="33%" height="15%">
+<p> </p>
+<img src="./monitoringplots/LAPPDSC_TimeEvolution_Light_lastDay.png" width=33% height="15%">
+<img src="./monitoringplots/LAPPDSC_TimeEvolution_Thermistor_lastDay.png"  width="33%" height="15%">
+<img src="./monitoringplots/LAPPDSC_TimeEvolution_SaltBridge_lastDay.png"  width="33%" height="15%">
+<p> </p>
+<hr>
 <div style="width:3%; overflow: inline; float: left;"> &ensp;</div>
 <div style="width:20%; overflow: inline; float: left;"> <b>1)</b> Are MRD files periodically updating? </div>
 <img src="./monitoringplots/MRD_FileHistory_current_2h.png"  width="35%" height="15%">
@@ -130,8 +139,8 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
      .then ((data) => {
        var num = parseInt(data);
        var num_services_text = num;
-       if (num == 20) num_services_text = "<p style=\"color:green; font-size: 30px;\" > DAQ Services: "+num+"/20 (All good) [Last updated: "+ new Date(num_date*1000).toLocaleString()+ " ] </p>";
-       else num_services_text = "<p  style=\"color:red; font-size: 30px;\"> DAQ Services: "+num+"/20 (Something wrong) [Last updated: "+ new Date(num_date*1000).toLocaleString()+ " ] </p>";
+       if (num == 24) num_services_text = "<p style=\"color:green; font-size: 30px;\" > DAQ Services: "+num+"/24 (All good) [Last updated: "+ new Date(num_date*1000).toLocaleString()+ " ] </p>";
+       else num_services_text = "<p  style=\"color:red; font-size: 30px;\"> DAQ Services: "+num+"/24 (Something wrong) [Last updated: "+ new Date(num_date*1000).toLocaleString()+ " ] </p>";
 
        document.getElementById("NumServices").innerHTML = num_services_text;
 
