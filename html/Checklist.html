@@ -98,6 +98,15 @@ Monitoring</span>
 <img src="./monitoringplots/DAQCPU_lastDay.png"  width="33%" height="40%">
 <p> </p>
 <hr>
+<img src="./monitoringplots/LAPPDSC_TempHumInfo_current.png" width=29% height="40%">
+<img src="./monitoringplots/LAPPDSC_TimeEvolution_Humidity_lastDay.png"  width="33%" height="40%">
+<img src="./monitoringplots/LAPPDSC_TimeEvolution_Temperature_lastDay.png"  width="33%" height="40%">
+<p> </p>
+<img src="./monitoringplots/LAPPDSC_TimeEvolution_Light_lastDay.png" width=33% height="40%">
+<img src="./monitoringplots/LAPPDSC_TimeEvolution_Thermistor_lastDay.png"  width="33%" height="40%">
+<img src="./monitoringplots/LAPPDSC_TimeEvolution_SaltBridge_lastDay.png"  width="33%" height="40%">
+<p> </p>
+<hr>
 <!-- <p> <b> VME 01 </b> </p>
 <div id="content1"></div>
 <hr>
@@ -218,8 +227,8 @@ setInterval(showcompstats, 3000);
      .then ((data) => {
        var num = parseInt(data);
        var num_services_text = num;
-       if (num == 20) num_services_text = "<p style=\"color:green; font-size: 30px;\" > DAQ Services: "+num+"/20 (All good) [Last updated: "+ new Date(num_date*1000).toLocaleString()+" ] </p>";
-       else num_services_text = "<p  style=\"color:red; font-size: 30px;\"> DAQ Services: "+num+"/20 (Something wrong) [Last updated: "+ new Date(num_date*1000).toLocaleString()+ " ] </p>";
+       if (num == 24) num_services_text = "<p style=\"color:green; font-size: 30px;\" > DAQ Services: "+num+"/24 (All good) [Last updated: "+ new Date(num_date*1000).toLocaleString()+" ] </p>";
+       else num_services_text = "<p  style=\"color:red; font-size: 30px;\"> DAQ Services: "+num+"/24 (Something wrong) [Last updated: "+ new Date(num_date*1000).toLocaleString()+ " ] </p>";
 
        document.getElementById("NumServices").innerHTML = num_services_text;
 
