@@ -227,8 +227,8 @@ setInterval(showcompstats, 3000);
      .then ((data) => {
        var num = parseInt(data);
        var num_services_text = num;
-       if (num == 24) num_services_text = "<p style=\"color:green; font-size: 30px;\" > DAQ Services: "+num+"/24 (All good) [Last updated: "+ new Date(num_date*1000).toLocaleString()+" ] </p>";
-       else num_services_text = "<p  style=\"color:red; font-size: 30px;\"> DAQ Services: "+num+"/24 (Something wrong) [Last updated: "+ new Date(num_date*1000).toLocaleString()+ " ] </p>";
+       if (num == 22) num_services_text = "<p style=\"color:green; font-size: 30px;\" > DAQ Services: "+num+"/22 (All good) [Last updated: "+ new Date(num_date*1000).toLocaleString()+" ] </p>";
+       else num_services_text = "<p  style=\"color:red; font-size: 30px;\"> DAQ Services: "+num+"/22 (Something wrong) [Last updated: "+ new Date(num_date*1000).toLocaleString()+ " ] </p>";
 
        document.getElementById("NumServices").innerHTML = num_services_text;
 
