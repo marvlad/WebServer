@@ -28,7 +28,6 @@ SQL Database</span>
         <a class=\"mdl-navigation__link\" href=\"/cgi-bin/logs.cgi\">Logs</a>                                                                               
         <a class=\"mdl-navigation__link\" href=\"./Checklist.html\">Monitoring</a>                                                                   
         <a class=\"mdl-navigation__link\" href=\"/cgi-bin/SQL.cgi\">SQL</a>                                                                                 
-        <a class=\"mdl-navigation__link\" href=\"/cgi-bin/RunType.cgi\">RunType</a>                                                                                 
         <a class=\"mdl-navigation__link\" href=\"./Cameras.html\">Cameras</a>                                                                                         
       </nav>                                                                                                                                                
     </div>                                                                                                                                                                       </header>                                                                                                                                                 
@@ -42,7 +41,6 @@ SQL Database</span>
         <a class=\"mdl-navigation__link\" href=\"/cgi-bin/logs.cgi\">Logs</a>
  <a class=\"mdl-navigation__link\" href=\"./Checklist.html\">Monitoring</a>                                                                   
         <a class=\"mdl-navigation__link\" href=\"/cgi-bin/SQL.cgi\">SQL</a>                                                                                 
-        <a class=\"mdl-navigation__link\" href=\"/cgi-bin/RunType.cgi\">RunType</a>                                                                                 
         <a class=\"mdl-navigation__link\" href=\"./Cameras.html\">Cameras</a>                                                                                         
     </nav>                                                                                                                                                  
   </div>                                                                                                                                                    
@@ -53,7 +51,7 @@ SQL Database</span>
 "          
 
 
-echo "Select * from run order by id desc" | psql annie -h 192.168.163.21 -d rundb > /tmp/sql
+echo "Select * from runinformation order by id desc" | psql annie -h 192.168.163.11 > /tmp/sql
 
 echo "
 <table class=\"mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp\">

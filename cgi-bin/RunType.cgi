@@ -53,7 +53,7 @@ SQL Database</span>
 "          
 
 
-echo "Select * from run order by id desc" | psql annie -h 192.168.163.21 -d rundb > /tmp/sql
+echo "Select * from runconfig order by id desc" | psql annie -h 192.168.163.21 -d rundb > /tmp/runtype
 
 echo "
 <table class=\"mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp\">
@@ -84,7 +84,7 @@ then
 
 fi
 
-done <  /tmp/sql
+done <  /tmp/runtype
 
 
 echo "                                                                                                                                                                                                             
