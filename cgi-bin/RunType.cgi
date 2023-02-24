@@ -77,6 +77,10 @@ then
        <td>${myarray[5]}</td>                                                                                                                               
        <td>${myarray[6]}</td>                                                                                                                                
        <td>${myarray[7]}</td>                                                                                                                                
+       <td>${myarray[8]}</td>                                                                                                                                
+       <td>${myarray[9]}</td>                                                                                                                               
+       <td>${myarray[10]}</td>                                                                                                                                
+       <td>${myarray[11]}</td>                                                                                                                                
        
        
 </tr>
