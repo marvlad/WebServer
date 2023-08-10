@@ -64,7 +64,7 @@ Monitoring</span>
 
   </header>
   <div class="mdl-layout__drawer">
- <img src="../ANNIE-logo.png"  width="90%" height="10%"> 
+ <img src="./ANNIE-logo.png"  width="90%" height="10%"> 
     <span class="mdl-layout-title"></span>
 <div class="android-drawer-separator"></div>
     <nav class="mdl-navigation">
@@ -88,9 +88,16 @@ Monitoring</span>
 <p> <a href="./ChecklistPrint.html">Print version</a> </p>
 
 <!---<p style="color: black;font-size: 30px;"> <span id="NumServices"></span></p> </p>-->
- <div id="NumServices"> </div>
- <p> </p>
+<!-- <div id="NumServices"> </div>
+ <p> </p> !-->
 
+<!--<div style="width:3%; overflow: hidden; float: left; background-color: #fff ; padding: 12px; border: 0px solid black;"> &ensp;</div>!-->
+<div id="CurrentWarnings"> </div>
+<!--<div style="width:3%; overflow: hidden; float: left; background-color: #fff ; padding: 12px; border: 0px solid black;"> &ensp;</div>!-->
+<!-- <p> </p> !-->
+<div id="CurrentIPs"> </div>
+<p> </p>
+<hr>
 <img src="./monitoringplots/DAQInfo_current.png" width=35% height="40%">
 <img src="./monitoringplots/DAQ_VMEServices_current_24h.png"  width="25%" height="40%">
 <img src="./monitoringplots/DAQFileSize_lastDay.png"  width="37%" height="40%">
@@ -221,7 +228,7 @@ setInterval(showcompstats, 3000);
 
 </script> -->
 
-<script>
+<!-- <script>
  function getNumServices() {
    var myHeaders = new Headers();
    myHeaders.append('pragma', 'no-cache');
@@ -254,7 +261,178 @@ setInterval(showcompstats, 3000);
    
  }
  setInterval(getNumServices, 20000); //run function getNumServices() every 20 seconds (/every minute)
- </script>
+ </script> !-->
+
+<script>
+function showCurrentWarnings() {
+
+  var myHeaders = new Headers();
+  myHeaders.append('pragma', 'no-cache');
+  myHeaders.append('cache-control', 'no-cache');
+
+  var myInit = {
+    method: 'GET',
+    headers: myHeaders,
+  };
+ fetch('./monitoringplots/current_warnings.txt',myInit)
+    .then(response => response.text())
+    .then ((data) => {
+
+      // this will return each line as an individual String
+      const lines = data.split("\n");
+
+      // loop through the lines and return an array of individual
+      // Strings within the line that are separated by a comma
+
+      var monitor_warning=0;
+      var daq_warning=0;
+      var vme_warning=0;
+      var lappd_warning=0;
+
+      var color_monitor = "#cfc";
+      var color_daq = "#cfc";
+      var color_vme = "#cfc";
+      var color_lappd = "#cfc";
+
+      for (let i = 0; i < lines.length; i++) {
+        splitData = lines[i].split("    ");
+        if (splitData[0] == "Monitoring") monitor_warning = splitData[1];
+        else if (splitData[0] == "DAQ") daq_warning = splitData[1];
+        else if (splitData[0] == "VME") vme_warning = splitData[1];
+        else if (splitData[0] == "LAPPD") lappd_warning = splitData[1];
+      }
+
+      if (monitor_warning != "0") color_monitor = "#f00";
+      if (daq_warning != "0") color_daq = "#f00";
+      if (vme_warning != "0") color_vme = "#f00";
+      if (lappd_warning != "0") color_lappd = "#f00";
+
+  var warnings_text = "<div style=\"width:2%; overflow: hidden; float: left; background-color: #fff ; padding: 12px; border: 0px solid black;\"> &ensp;</div>"+
+    "<div style=\"width:20%; overflow: hidden; float: left; background-color: "+color_daq+" ; padding: 10px; border: 1px solid black;\">"+
+"<b> DAQ </b>"+
+  "</div>" +
+  "<div style=\"width:3%; overflow: hidden; float: left;\"> &ensp; </div>" +
+  "<div style=\"width:20%; overflow: hidden; float: left; background-color: "+color_monitor+" ; padding: 10px; border: 1px solid black;\">"+
+  "<b> Monitoring </b>"+
+  "</div>"+
+"<div style=\"width:3%; overflow: hidden; float: left;\"> &ensp; </div>" +
+  "<div style=\"width:20%; overflow: hidden; float: left; background-color: "+color_vme+" ; padding: 10px; border: 1px solid black;\">"+
+  "<b> VMEs </b>"+
+  "</div>"+
+"<div style=\"width:3%; overflow: hidden; float: left;\"> &ensp; </div>" +
+  "<div style=\"width:20%; overflow: hidden; float: left; background-color: "+color_lappd+" ; padding: 10px; border: 1px solid black;\">"+
+  "<b> LAPPDs </b>"+
+  "</div>"+
+"<div style=\"width:1px; overflow: hidden; display:block; background-color: #fff ; padding: 12px; border: 0px solid black;\"> &ensp;</div>"
+  document.getElementById("CurrentWarnings").innerHTML = warnings_text;
+
+});
+
+}
+setInterval(showCurrentWarnings, 3000);
+</script>
+
+<script>
+function showCurrentIPs() {
+
+  var myHeaders = new Headers();
+  myHeaders.append('pragma', 'no-cache');
+  myHeaders.append('cache-control', 'no-cache');
+
+  var myInit = {
+    method: 'GET',
+    headers: myHeaders,
+  };
+  var runs_text = "";
+  fetch('./monitoringplots/current_status.txt',myInit)
+    .then(response => response.text())
+    .then ((data) => {
+
+      // this will return each line as an individual String
+      const lines = data.split("\n");
+
+      // loop through the lines and return an array of individual
+      // Strings within the line that are separated by a comma
+
+      var run_nr="None";
+      var subrun_nr="None";
+      var part_nr="None";
+      var runtype="None";
+      var events_vme="None";
+      var events_camac="None";
+      var events_lappd="None";
+      var events_trig="None";
+
+     for (let i = 0; i < lines.length; i++) {
+        splitData = lines[i].split("    ");
+        if (splitData[0] == "Run") run_nr = splitData[1];
+        else if (splitData[0] == "SubRun") subrun_nr = splitData[1];
+        else if (splitData[0] == "Part") part_nr = splitData[1];
+        else if (splitData[0] == "RunType") runtype = splitData[1];
+        else if (splitData[0] == "VME") events_vme = splitData[1];
+        else if (splitData[0] == "CAMAC") events_camac = splitData[1];
+        else if (splitData[0] == "LAPPD") events_lappd = splitData[1];
+        else if (splitData[0] == "Trig") events_trig = splitData[1];
+      }
+
+      runs_text = "Run: "+run_nr+", SubRun: "+subrun_nr+", Part: "+part_nr+", RunType: "+runtype;
+  });
+ fetch('./monitoringplots/current_ips.txt',myInit)
+.then(response => response.text())
+    .then ((data) => {
+
+      // this will return each line as an individual String
+      const lines = data.split("\n");
+
+      // loop through the lines and return an array of individual
+      // Strings within the line that are separated by a comma
+
+      var monitor_ip="None";
+      var daq_ip="None";
+      var vme_ip1="None";
+      var vme_ip2="None";
+      var vme_ip3="None";
+      var lappd_ip1="None";
+      var lappd_ip2="None";
+      var lappd_ip3="None";
+
+      for (let i = 0; i < lines.length; i++) {
+        splitData = lines[i].split("    ");
+        if (splitData[0] == "Monitoring") monitor_ip = splitData[1];
+        else if (splitData[0] == "DAQ") daq_ip = splitData[1];
+        else if (splitData[0] == "VME1") vme_ip1 = splitData[1];
+        else if (splitData[0] == "VME2") vme_ip2 = splitData[1];
+        else if (splitData[0] == "VME3") vme_ip3 = splitData[1];
+        else if (splitData[0] == "LAPPD1") lappd_ip1 = splitData[1];
+        else if (splitData[0] == "LAPPD2") lappd_ip2 = splitData[1];
+        else if (splitData[0] == "LAPPD3") lappd_ip3 = splitData[1];
+      }
+
+      var ip_text = "<div style=\"width:2%; overflow: hidden; float: left; background-color: #fff ; padding: 12px; height: 114px; border: 0px solid black;\"> &ensp;</div>" +
+  "<div style=\"width:20%; overflow: hidden; float: left; padding: 10px; border: 1px solid black;\">"+
+  "DAQ IP: "+daq_ip+"<p></p>"+
+  runs_text +
+  "</div>" +
+  "<div style=\"width:3%; overflow: hidden; float: left;\"> &ensp; </div>" +
+  "<div style=\"width:20%; overflow: hidden; float: left; padding: 10px; border: 1px solid black;\">"+
+  "Monitoring IP: "+monitor_ip +
+  "</div>"+
+  "<div style=\"width:3%; overflow: hidden; float: left;\"> &ensp; </div>" +
+  "<div style=\"width:20%; overflow: hidden; float: left; padding: 10px; border: 1px solid black;\">"+
+  "VME1 IP: "+vme_ip1 +"<p></p> VME2 IP: "+vme_ip2 + " <p></p> VME3 IP: "+vme_ip3+
+  "</div>"+
+  "<div style=\"width:3%; overflow: hidden; float: left;\"> &ensp; </div>" +
+  "<div style=\"width:20%; overflow: hidden; float: left; padding: 10px; border: 1px solid black;\">"+
+  "LAPPD1 IP: "+lappd_ip1 + "<p></p> LAPPD2 IP: "+lappd_ip2 +"<p></p> LAPPD3 IP: "+lappd_ip3+
+ "</div>"+
+"<div style=\"width:1px; overflow: hidden; display:block; background-color: #fff ; padding: 12px; height: 114px; border: 0px solid black;\"> &ensp;</div>";
+  document.getElementById("CurrentIPs").innerHTML = ip_text;
+
+});
+
+}
+setInterval(showCurrentIPs, 3000);
+</script>
 
 
 </body>

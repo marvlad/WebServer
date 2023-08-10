@@ -53,7 +53,7 @@ SQL Database</span>
 "          
 
 
-echo "Select id, runnum, subrunnum, start, stop, runconfig as runtype, notes, numevents from run order by id desc" | psql annie -h 192.168.163.21 -d rundb > /tmp/sql
+echo "Select id, runnum, subrunnum, start_utc AT time zone 'UTC' as start, stop_utc AT time zone 'UTC' as stop, runconfig as runtype, notes, numevents from run order by id desc" | psql annie -h 192.168.163.21 -d rundb > /tmp/sql
 
 echo "
 <table class=\"mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp\">
