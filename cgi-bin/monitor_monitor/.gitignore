@@ -1,0 +1,5 @@
+*
+!.gitignore
+!check_services.cpp
+!Makefile
+!setup/
