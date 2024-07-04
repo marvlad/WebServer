@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 
 #echo test1
 #cd /home/annie/ANNIEDAQ
@@ -9,6 +10,7 @@
 ########################## Lock function garentees only one instance #########################
 exec 200>/WebServer/Mirror/lock
 flock -n 200 || exit 1
+trap 'rm -f /WebServer/Mirror/lock' EXIT
 
 ##############################################
 
@@ -208,8 +210,14 @@ PRINC=`cat  /home/annie_local/.kerberos/annieraw.principal`
 KEYTAB=/home/annie_local/.kerberos/annieraw.keytab
 #export KRB5CCNAME=/home/annie/.kerberos/krb5cc_archiver
 
-su annie -c 'rsync -rLptg /WebServer/Mirror/ /exp/annie/web/daq'
+#su annie -c 'rsync -rLptg /WebServer/Mirror/ /exp/annie/web/daq'
 
- #kinit -k -t ${KEYTAB} ${PRINC}
- #scp -rp -c blowfish -q /WebServer/Mirror/*  ${TARG}:${PAPR}/
+PRINC="moflaher"
+KEYTAB=/home/moflaher/.ssh/moflaher.keytab
+PAPR=/exp/annie/web/daq/
+TARG=annie@annielx02.fnal.gov
+kinit -k -t ${KEYTAB} ${PRINC}
+scp -rp -q /WebServer/Mirror/*  ${TARG}:${PAPR}/
+echo "scp ended with exit code $?"
 ###scp -r -q /WebServer/Mirror/*  annieraw@anniegpvm02:/annie/data/web/daq/
+
