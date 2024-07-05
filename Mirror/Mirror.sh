@@ -1,5 +1,6 @@
 #!/bin/bash
 set -x
+export TZ=America/Chicago
 
 #echo test1
 #cd /home/annie/ANNIEDAQ
@@ -153,14 +154,17 @@ echo Mirrored at `date` > /WebServer/Mirror/LAPPDTimeEvolution.html
 cat /WebServer/Mirror/tmp | sed s:.cgi-bin/::g | sed s:.cgi:.html:g  >> /WebServer/Mirror/LAPPDTimeEvolution.html
 
 wget http://192.168.163.61:8001/CAEN_HV/  -O /WebServer/Mirror/tmp
+mkdir -p /WebServer/Mirror/CAEN_HV
 echo Mirrored at `date` > /WebServer/Mirror/CAEN_HV/index.html
 cat /WebServer/Mirror/tmp >> /WebServer/Mirror/CAEN_HV/index.html
 
 wget http://192.168.163.61:8001/CAEN_HV/Summary_Page/  -O /WebServer/Mirror/tmp
+mkdir -p /WebServer/Mirror/CAEN_HV/Summary_Page
 echo Mirrored at `date` > /WebServer/Mirror/CAEN_HV/Summary_Page/index.html
 cat /WebServer/Mirror/tmp >> /WebServer/Mirror/CAEN_HV/Summary_Page/index.html
 
 wget http://192.168.163.61:8001/CAEN_HV/Channel_Table/  -O /WebServer/Mirror/tmp
+mkdir -p /WebServer/Mirror/CAEN_HV/Channel_Table
 echo Mirrored at `date` > /WebServer/Mirror/CAEN_HV/Channel_Table/index.html
 cat /WebServer/Mirror/tmp >> /WebServer/Mirror/CAEN_HV/Channel_Table/index.html
 
@@ -169,6 +173,7 @@ echo Mirrored at `date` > /WebServer/Mirror/CAEN_HV/graphs.html
 cat /WebServer/Mirror/tmp >> /WebServer/Mirror/CAEN_HV/graphs.html
 
 wget http://192.168.163.61:8001/CAEN_HV/Alarm_Screencap/  -O /WebServer/Mirror/tmp
+mkdir -p /WebServer/Mirror/CAEN_HV/Alarm_Screencap
 echo Mirrored at `date` > /WebServer/Mirror/CAEN_HV/Alarm_Screencap/index.html
 cat /WebServer/Mirror/tmp >> /WebServer/Mirror/CAEN_HV/Alarm_Screencap/index.html
 
