@@ -207,12 +207,11 @@ psql -h 192.168.163.21 -U admin -d rundb -H -c "select * from vme" > /WebServer/
 #for file in `ls /var/www/html/ -r`
 
 #LOG=/data/logs/archiver/archiver.log
-PAPR=/annie/data/web/daq/
-TARG=annieraw@anniegpvm01
+#PAPR=/annie/data/web/daq/
+#TARG=annieraw@anniegpvm01
 
-
-PRINC=`cat  /home/annie_local/.kerberos/annieraw.principal`
-KEYTAB=/home/annie_local/.kerberos/annieraw.keytab
+#PRINC=`cat  /home/annie_local/.kerberos/annieraw.principal`
+#KEYTAB=/home/annie_local/.kerberos/annieraw.keytab
 #export KRB5CCNAME=/home/annie/.kerberos/krb5cc_archiver
 
 #su annie -c 'rsync -rLptg /WebServer/Mirror/ /exp/annie/web/daq'
@@ -220,9 +219,29 @@ KEYTAB=/home/annie_local/.kerberos/annieraw.keytab
 PRINC="moflaher"
 KEYTAB=/home/moflaher/.ssh/moflaher.keytab
 PAPR=/exp/annie/web/daq/
-TARG=annie@annielx02.fnal.gov
+#TARG=annie@annielx02.fnal.gov
+TARG=""
+TARG1=annie-gw01.fnal.gov
+TARG2=annie-gw02.fnal.gov
+ping -c 1 ${TARG1}
+if [ $? -eq 0 ]; then
+	TARG="annie@${TARG1}"
+else
+	ping -c 1 ${TARG2}
+	if [ $? -eq 0 ]; then
+		TARG="annie@${TARG2}"
+	fi
+fi
+if [ -z "${TARG}" ]; then
+	echo "unable to contact either annie gateway!"
+	exit -1
+fi
 kinit -k -t ${KEYTAB} ${PRINC}
 scp -rp -q /WebServer/Mirror/*  ${TARG}:${PAPR}/
+RET=$?
+if [ ${RET} -ne 0 ]; then
+	curl -X POST -H --silent --data-urlencode "payload={\"text\": \"WebMirror error mirroring to ${TARG}!\"}" ${TOKEN}
+fi
 echo "scp ended with exit code $?"
 ###scp -r -q /WebServer/Mirror/*  annieraw@anniegpvm02:/annie/data/web/daq/
 

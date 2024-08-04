@@ -1,4 +1,5 @@
 #!/bin/bash
+TOKEN=$(cat /home/annie/water_webhook)
 
 if [  `cat /WebServer/Mirror/WaterSensor/leaks  | grep WATER | wc -l` != '0' ]
 then
@@ -16,7 +17,7 @@ then
 	/usr/sbin/sendmail  benedict.kaiser@uni-tuebingen.de <  /WebServer/Mirror/WaterSensor/leaks
 	/usr/sbin/sendmail  mascenci@iastate.edu < /WebServer/Mirror/WaterSensor/leaks
 	/usr/sbin/sendmail  franklin.lemmons@mines.sdsmt.edu < /WebServer/Mirror/WaterSensor/leaks
-	curl -X POST --data-urlencode "payload={\"text\": \"`cat /WebServer/Mirror/WaterSensor/leaks`\"}" https://hooks.slack.com/services/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
+	curl -X POST --data-urlencode "payload={\"text\": \"`cat /WebServer/Mirror/WaterSensor/leaks`\"}" ${TOKEN}
 	curl -u WaterAdmin:waterannie19 http://192.168.163.100:80/outlet?1=OFF
 	curl -u WaterAdmin:waterannie19 http://192.168.163.100:80/outlet?2=OFF
 	

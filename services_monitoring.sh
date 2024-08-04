@@ -1,4 +1,5 @@
 #!/bin/bash
+TOKEN=$(cat /home/annie/slack_webhook)
 set -x
 
 # paths are relative to the script directory
@@ -27,7 +28,7 @@ if [ -s ${SCRIPTDIR}/cgi-bin/monitor_monitor/services_errors.txt ]; then
 		#echo $PAYLOAD
 	
 		# send to slack
-		curl -X POST -H --silent --data-urlencode "payload={\"text\": \"${PAYLOAD}\"}" https://hooks.slack.com/services/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
+		curl -X POST -H --silent --data-urlencode "payload={\"text\": \"${PAYLOAD}\"}" ${TOKEN}
 
 	done < ${SCRIPTDIR}/cgi-bin/monitor_monitor/services_errors.txt
 
